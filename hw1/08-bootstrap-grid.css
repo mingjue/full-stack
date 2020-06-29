@@ -12,3 +12,28 @@
   background-color: coral;
   background-color: green; 
 */
+.row > div[class^='col'] {
+  height: 100px;
+  padding: 10px;
+  border: 1px solid white;
+  color: black;
+}
+
+.col-2{
+  background-color: navy;
+}
+.col-3{
+  background-color: purple;
+}
+.col-4{
+  background-color: teal;
+}
+.col-6{
+  background-color: palevioletred;
+}
+.col-8{
+  background-color: coral;
+}
+.col-12{
+  background-color: green;
+}
