@@ -1,0 +1,50 @@
+body{
+    background-color:rgb(50,50,50);
+
+
+}
+.container{
+    background-color: white;
+    width: 330px;
+    height: auto;
+    padding-block-end: 30px;
+    transform: translateY(30px);
+    border-radius: 3px;
+}
+#sub{
+    width: 49%;
+}
+#res{
+    width: 49% ;
+}
+
+p{
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-size: larger;
+   
+}
+
+
+
+@media screen and (max-width:768px){
+    .container{
+        width: 90%;
+        margin: 70px auto auto auto;
+        background-color: white;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width:414px){
+    .container{
+        width: 300px;
+        height: auto;
+        margin: 70px auto auto auto;
+        background-color: white;
+        border-radius: 4px;
+        
+        
+    }
+}
