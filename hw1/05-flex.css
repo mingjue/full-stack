@@ -15,3 +15,42 @@
 }
 
 /* Add your code here */
+.flex-container {
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: column;
+  justify-content:flex-end;
+}
+.item1{
+
+  order:10;
+}
+
+.item2{
+  order: 3;
+}
+.item3{
+  order:2;
+}
+.item4{
+  order:1;
+}
+.item5{
+  order: 6;
+}
+.item6{
+  order: 5;
+}
+.item7{
+  order: 4;
+}
+.item8{
+  order: 9;
+}
+.item9{
+  order: 8;
+}
+.item10{
+  order: 7;
+}
