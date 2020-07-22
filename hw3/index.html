@@ -7,5 +7,42 @@
   </head>
   <body>
     <!-- Enter your code here -->
+    <div class="container mx-auto mt-0">
+      <form class="bg-lightrounded mx-auto" action="/submit" method ="post">
+        <div class="form-group">
+          <p>Contact Form</p>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name*</label>
+          <br>
+          <input type="name" class="form-control" id="name" name ='name'>
+        </div>
+     
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <br>
+          <input type="email" class="form-control" id="email" name = "email">
+        </div>
+     
+        <div class="form-group">
+          <label for="else">Submit your message:</label>
+          <br>
+          <textarea name ="else" class="form-control" id="else" ></textarea>
+          
+        </div>
+
+        <div class="form-check" id = "CB">
+          <input type="checkbox" class="form-check-input" id="checkbox" >
+          <label class="form-check-label" for="checkbox">Sign up for the newsletter</label>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" id ="sub" value="Submit"/>
+          <input type="reset" class="btn btn-secondary" id ="res" value="Reset"/>
+        </div>
+        
+      </from>
+    </div>
   </body>
 </html>
