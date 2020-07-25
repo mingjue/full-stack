@@ -6,10 +6,7 @@ const port = 8080;
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res)=> {
-
     res.sendFile(__dirname+'/'+'index.html');
-    
-
 })
 
 app.post('/submit',(req,res)=>{

@@ -28,7 +28,6 @@ app.get('/sandy', ( req, res) => {
 });
 
 app.get('/spongebob', ( req, res) => {
-    
     var router = 'sandy'
     fecthContent(req,res,router)
 });
