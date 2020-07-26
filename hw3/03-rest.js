@@ -1,25 +1,54 @@
 const express = require('express');
-const axios = require('axios');
+const fetch = require("node-fetch");
 const port = 8080;
 
 var app = express();
 
 app.use(express.urlencoded({ extended: false }));
 
-function getData(){
-    axios.get('https://restcountries.eu/')
-  .then(response => {
-    console.log(response.data.url);
-    console.log(response.data.explanation);
-  })
-  .catch(error => {
+const url = "https://restcountries.eu/rest/v2/all";
+let rObj = {}
+let po = {}
+const getDataCap = async url => {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    for (var i = 0 ; i<json.length; i++){
+      rObj[json[i].name] = json[i].capital
+    }
+    
+  } catch (error) {
     console.log(error);
-  });
-}
+  }
+  console.log(JSON.stringify(rObj));
+  return rObj
+};
 
-app.get('/main', ( req, res) => {
-    getData()
+const getDataCpo = async url => {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    for (var i = 0 ; i<json.length; i++){
+      if (json[i].population > 20000000){
+        po[json[i].name] = json[i].capital
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(JSON.stringify(po));
+  return po
+};
+
+
+app.get('/main', async(req, res) => {
+  res.send(await getDataCap(url))
 });
+
+app.get('/populous', async(req, res) => {
+  res.send(await getDataCpo(url))
+});
+
 
 
 app.listen(port, ()=>{
