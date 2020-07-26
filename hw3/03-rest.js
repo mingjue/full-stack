@@ -7,8 +7,10 @@ var app = express();
 app.use(express.urlencoded({ extended: false }));
 
 const url = "https://restcountries.eu/rest/v2/all";
+
 let rObj = {}
 let po = {}
+let re = {}
 const getDataCap = async url => {
   try {
     const response = await fetch(url);
@@ -40,6 +42,25 @@ const getDataCpo = async url => {
   return po
 };
 
+const getDataCre = async () => {
+  try {
+    let region = ['africa','americas','asia','europe','oceania']
+      
+    for (var i = 0; i<6 ;i++){
+      let reurl = "https://restcountries.eu/rest/v2/region/"
+      reurl = reurl+region[i]
+      console.log(reurl)
+      const response = await fetch(reurl);
+      const json = await response.json();
+      re[region[i]]=json.length
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(JSON.stringify(re));
+  return re
+};
+
 
 app.get('/main', async(req, res) => {
   res.send(await getDataCap(url))
@@ -47,6 +68,10 @@ app.get('/main', async(req, res) => {
 
 app.get('/populous', async(req, res) => {
   res.send(await getDataCpo(url))
+});
+
+app.get('/regions', async(req, res) => {
+  res.send(await getDataCre())
 });
 
 
