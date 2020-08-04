@@ -32,10 +32,11 @@ app.get('/spongebob', ( req, res) => {
     fecthContent(req,res,router)
 });
 
-app.get('/', ( req, res) => {
-    var router = ''
+app.get('', ( req, res) => {
+    var router = ' /'
     fecthContent(req,res,router)
 });
+
 
 app.get('/pearl', ( req, res) => {
     var router = ''
