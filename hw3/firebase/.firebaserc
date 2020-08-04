@@ -1,5 +1,6 @@
 {
   "projects": {
-    "firebasePractice": "friendlychat-4aeac"
+    "firebasePractice": "friendlychat-4aeac",
+    "staging": "friendlychat-9b807"
   }
 }
